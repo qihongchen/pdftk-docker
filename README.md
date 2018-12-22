@@ -22,6 +22,9 @@ docker run -v /Users/qchen/Documents/pdfs:/root/pdfs -it --rm --entrypoint=/bin/
 // odd.pdf contains all odd pages, and even.pdf contains all even pages in reverse order
 // the output is 'combined.pdf'
 # pdftk A=odd.pdf B=even.pdf shuffle A Bend-1 output combined.pdf 
+
+// extract pages 3-5, 7-9, 11, 10 from input "aaa.pdf" to output "bbb.pdf" in that order
+pdftk A=aaa.pdf cat A3-5 A7-9 A11 A10 output bbb.pdf
 ```
 
 See [examples](https://www.pdflabs.com/docs/pdftk-cli-examples/) for more PDFtk usages.
